@@ -6,8 +6,8 @@ const Header = () => {
             <h1>Corina Piercer</h1>
             <nav>
                 <ul>
-                    <li><a>categorias</a></li>
-                    <li><a>carrito</a></li>
+                    <li><a href='#'>categorias</a></li>
+                    <li><a href='#'>carrito</a></li>
                 </ul>
             </nav>
         </header>
