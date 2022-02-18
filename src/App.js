@@ -6,14 +6,15 @@
 //export default App
 //import React  from 'react'
 
-import Header from "./Header"
-import Footer from "./Footer"
-import Main from "./Main"
+import NavBar from "./components/NavBar"
+import Main from "./components/Main"
+import Footer from "./components/Footer"
+
 
 const App = () => {
     return (
         <>
-            <Header/>
+            <NavBar/>
             <Main/>
             <Footer/>
         </>
