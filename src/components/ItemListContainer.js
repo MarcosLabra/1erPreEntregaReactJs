@@ -1,7 +1,7 @@
-const Main = (nombre) => {
+const Main = ({nombre}) => {
   return (
     <main>
-        <h2>Bienvenido <span>{nombre}</span></h2>
+        <h2>Bienvenido <span>{nombre}</span>!</h2>
     </main>
   )
 }

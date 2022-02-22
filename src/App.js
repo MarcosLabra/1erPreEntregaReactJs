@@ -5,7 +5,7 @@ import Footer from "./components/Footer"
 
 const App = () => {
 
-    const nombre = "marcos";
+    const nombre = "Marcos";
 
     return (
         <>
