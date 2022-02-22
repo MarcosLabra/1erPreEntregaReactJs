@@ -1,8 +1,6 @@
-import React from 'react'
-
 const Footer = () => {
     return (
-        <footer id="main-footer" className='footer-black'>
+        <footer>
             <p>Desarrollado por <span>Marcos Labra</span></p>
             <ul>
             <li><a href="https://www.facebook.com/corina.piercer.1">FB</a></li>
