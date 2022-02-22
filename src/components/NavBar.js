@@ -1,5 +1,7 @@
 import React from 'react'
 
+import CartWidget from "./CartWidget"
+
 const Header = () => {
     return (
         <header>
@@ -8,8 +10,10 @@ const Header = () => {
                 <ul>
                     <li><a href='#'>categorias</a></li>
                     <li><a href='#'>carrito</a></li>
+                    <li><CartWidget/></li>
                 </ul>
             </nav>
+            
         </header>
     )
 }

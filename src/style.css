@@ -4,6 +4,14 @@
     box-sizing: border-box;
 }
 /*---------------------HEADER---------------------------- */
+#root  {
+    display: flex;
+    flex-direction: column;
+}
+
+html , body , #root {
+    height: 100vh;
+}
 
 header{
     background-color: #252525;
@@ -18,6 +26,8 @@ header h1{
     padding: 1rem;
 }
 header ul {
+    display: flex;
+    align-items: center;
     margin-right: 2rem;
 }
 
@@ -31,10 +41,22 @@ header ul li a{
     color: white;
     text-decoration: none;
 }
+
+header ul .carrito{
+    color: white;
+    font-size: 2rem;
+}
 /*---------------------Main---------------------------- */
 main{
     background-color: blanchedalmond;
-    height: 80vh;
+    flex-grow: 1;
+}
+
+main h2 {
+ margin: 3rem;
+}
+main h2 span {
+    color: crimson;
 }
 
 /*---------------------FOOTER---------------------------- */

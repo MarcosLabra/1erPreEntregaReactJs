@@ -1,9 +1,11 @@
 import React from 'react'
 
-const Main = () => {
+
+
+const Main = (nombre) => {
   return (
     <main>
-
+        <h2>Bienvenido <span>{nombre}</span></h2>
     </main>
   )
 }
