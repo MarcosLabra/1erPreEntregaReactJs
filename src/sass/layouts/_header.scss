@@ -1,0 +1,31 @@
+
+header{
+    background-color: #252525;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 12vh;
+    h1{
+        color: white;
+        padding: 1rem;
+        font-size: 3rem;
+    }
+    ul {
+        display: flex;
+        align-items: center;
+        margin-right: 2rem;
+        .carrito{
+            color: white;
+            font-size: 3rem;
+        }
+        li{
+            font-size: 3.5rem;
+            display: inline-block;
+            padding: 1rem;
+            a{
+                color: white;
+                text-decoration: none;
+            }
+        }
+    }
+}
