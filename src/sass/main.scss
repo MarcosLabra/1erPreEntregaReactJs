@@ -12,6 +12,11 @@
 html , body , #root {
   height: 100vh;
 }
+//----------------fonts----------------------------
+@font-face {
+  font-family: dolceVita;
+  src: url(../assets/fonts/DolceVita.ttf);
+}
 //----------------variables------------------------
 $casiNegro: #252525;
 $marron: #a37657;
