@@ -28,7 +28,6 @@ let starterProducts = [
 
 const Main = ({nombre}) => {
 
-  const [loading, setLoading] = useState(true);
   const [products, setproducts] = useState([]);
 
   useEffect(() => {
@@ -44,7 +43,6 @@ const Main = ({nombre}) => {
       .then((resultado)=>{
           console.log("Estuvo bien");
           setproducts(resultado);
-          setLoading(false);
       })
       .catch((error)=>{
           console.log("Estuvo mal");
