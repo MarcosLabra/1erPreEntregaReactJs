@@ -2,19 +2,19 @@ import { useState } from "react"
 
 const ItemCount = ({stock, initial, onAdd}) => {
 
-    const [estado, setEstado] = useState(initial)
+    const [count, setCount] = useState(initial)
 
     const sumar = () => {
-        if(estado < stock){
-            setEstado(estado + 1);
+        if(count < stock){
+            setCount(count + 1);
         }else{
         alert("no hay stock")
         }
     }
 
     const restar = () => {
-        if(estado > initial){
-        setEstado(estado - 1);
+        if(count > initial){
+            setCount(count - 1);
         }
     }
 
@@ -23,7 +23,7 @@ const ItemCount = ({stock, initial, onAdd}) => {
             <h3>Producto</h3>
             <div>
                 <button onClick={restar}>-</button>
-                <p>{estado}</p>
+                <p>{count}</p>
                 <button onClick={sumar}>+</button>
             </div>
             <button onClick={onAdd}>Agregar al carrito</button>
