@@ -1,11 +1,11 @@
-const item = ({id, title, price, description}) => {
+const item = ({product}) => {
   return (
-    <li key={id} className="productCard">
+    <article key={product.id} className="productCard">
         <div>aqui va la imagen</div>
-        <h3>{title}</h3>
-        <p className="description">{description}</p>
-        <p className="price">${price}</p>
-    </li>
+        <h3>{product.title}</h3>
+        <p className="description">{product.description}</p>
+        <p className="price">${product.price}</p>
+    </article>
   )
 }
 

@@ -1,19 +1,20 @@
-import NavBar from "./components/NavBar"
-import ItemListContainer from "./components/ItemListContainer"
+import { ToastContainer } from "react-toastify"
+import 'react-toastify/dist/ReactToastify.css';
 import Footer from "./components/Footer"
+import Header from "./components/Header"
+import Main from "./components/Main";
 
 
 
 
 const App = () => {
 
-    const nombre = "Marcos";
-
     return (
         <>
-            <NavBar/>
-            <ItemListContainer nombre={nombre}/>
+            <Header/>
+            <Main/>
             <Footer/>
+            <ToastContainer/>
         </>
     )
 }

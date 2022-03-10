@@ -1,19 +1,16 @@
 import CartWidget from "./CartWidget"
 
-const Header = () => {
+const NavBar = () => {
     return (
-        <header>
-            <h1>Corina Piercer</h1>
-            <nav>
-                <ul>
-                    <li><a href='#'>categorias</a></li>
-                    <li><a href='#'>carrito</a></li>
-                    <li><CartWidget/></li>
-                </ul>
-            </nav>
-            
-        </header>
+        <nav>
+            <ul>
+                <li><a href='#'>categorias</a></li>
+                <li><a href='#'>carrito</a></li>
+                <li><CartWidget/></li>
+            </ul>
+        </nav>
+        
     )
 }
 
-export default Header
+export default NavBar
