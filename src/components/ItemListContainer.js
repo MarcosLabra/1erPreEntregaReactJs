@@ -10,8 +10,10 @@ const ItemListContainer = () => {
   const {categoryId} = useParams()
   
   useEffect(() => {
-      
-      fetch('https://fakestoreapi.com/products') 
+      const url = `https://fakestoreapi.com/products${categoryId ? "/category/"+categoryId : ""}`
+      console.log(url)
+
+      fetch(url) 
       .then((response)=>{
           return response.json()
       })
@@ -24,7 +26,7 @@ const ItemListContainer = () => {
       .finally(()=>{
           setLoading(false)
       })
-      
+
   },[categoryId])
 
 
