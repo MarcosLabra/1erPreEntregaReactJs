@@ -1,65 +1,37 @@
 import { useEffect, useState } from "react"
 import ItemList from "./ItemList"
+import { useParams } from "react-router-dom"
 import { toast } from "react-toastify"
-
-let starterProducts = [
-  {
-    id: 1,
-    title: "Producto 1",
-    description: "descripcion 1",
-    price: 100,
-    pictureUrl: "foto 1"
-  },
-  {
-    id: 2,
-    title: "Producto 2",
-    description: "descripcion 2",
-    price: 200,
-    pictureUrl: "foto 2"
-  },
-  {
-    id: 3,
-    title: "Producto 3",
-    description: "descripcion 3",
-    price: 300,
-    pictureUrl: "foto 3"
-  }
-]
-
 
 const ItemListContainer = () => {
 
-  const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true)
-
+  const [items, setItems] = useState([])
+  const {categoryId} = useParams()
+  
   useEffect(() => {
-    toast.info("trayendo productos...")
-
-    const pedido = new Promise((res, rej) => {
-      setTimeout(() => {
-        res(starterProducts)
-      }, 2000)
-    })
-
-    pedido
-      .then((resultado) => {
-        toast.dismiss()
-        setProducts(resultado);
+      
+      fetch('https://fakestoreapi.com/products') 
+      .then((response)=>{
+          return response.json()
       })
-      .catch((error) => {
-        toast.error("error al traer productos")
+      .then((resultado)=>{
+          setItems(resultado)
       })
-      .finally(() => {
-        setLoading(false)
+      .catch(()=>{
+          toast.error("Error al cargar los productos")
       })
-
-  }, [])
+      .finally(()=>{
+          setLoading(false)
+      })
+      
+  },[categoryId])
 
 
   if (loading) {
-    return <h1>Cargando...</h1>
+    return <h4>Cargando...</h4>
   } else {
-    return <ItemList products={products} />
+    return <ItemList items={items} />
   }
 
 }

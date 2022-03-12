@@ -1,14 +1,21 @@
-const itemDetail = ({ product }) => {
-  return (
-    <article key={product.id} class="itemDetail">
-        <div class="imagen">aqui va la imagen</div>
-        <div class="titulos">
-          <h3>{product.title}</h3>
-          <p>${product.price}</p>
-        </div>
-        <p class="descripcion">{product.description}</p>
-    </article>
-  )
+import Rate from 'rc-rate';
+import 'rc-rate/assets/index.css';
+
+const ItemDetail = ({item}) => {
+    return (
+        <article className="itemDetail">
+            <img src={item.image} alt="" />
+            <div className="titulos">
+                <h3>{item.title}</h3>
+                <p>${item.price}</p>
+                <div>
+                <Rate allowHalf count={5} value={item.rating?.rate}/>
+                <p>Rates : {item.rating?.count}</p>
+                </div>
+            </div>
+            <p className="descripcion">{item.description}</p>
+        </article>
+    )
 }
 
-export default itemDetail
+export default ItemDetail

@@ -1,54 +1,40 @@
-import { useEffect, useState } from "react"
-import ItemDetail from "./ItemDetail"
-import { toast } from "react-toastify"
-
-let Producto =
-{
-    id: 1,
-    title: "Producto 1",
-    description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo sequi aut dolores maiores corrupti esse illo perferendis, vitae quibusdam quis blanditiis eaque porro iste eligendi excepturi. Eum beatae vel ea?",
-    price: 100,
-    pictureUrl: "foto 1"
-}
-
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { toast } from "react-toastify";
+import ItemDetail from "./ItemDetail";
 
 const ItemDetailContainer = () => {
 
-    const [product, setproduct] = useState([]);
-    const [loading, setLoading] = useState(true);
+  const [item, setItem] = useState({});
+  const [loading, setLoading] = useState(true);
+  const {itemId} = useParams()
+  const [rateActual, setRateActual] = useState(0)
 
-    useEffect(() => {
-        toast.info("trayendo detalles...")
+  useEffect(()=>{
 
-        const pedido = new Promise((res, rej) => {
-            setTimeout(() => {
-                res(Producto)
-            }, 2000)
-        })
+    fetch(`https://fakestoreapi.com/products/${itemId}`)
+    .then((response)=>{
+        return response.json()
+    })
+    .then((respuesta)=>{
+      setItem(respuesta)
+    })
+    .catch(()=>{
+      toast.error("Error al cargar el producto")
+    })
+    .finally(()=>{
+      setLoading(false)
+    })
 
-        pedido
-            .then((resultado) => {
-                toast.dismiss()
-                setproduct(resultado);
-            })
-            .catch((error) => {
-                toast.error("error al traer productos")
-            })
-            .finally(() => {
-                setLoading(false)
-              })
+  },[])
 
-    }, [])
-
-    if (loading) {
-        return <h1>Cargando...</h1>
-    } else {
-        return (
-            <>
-                <ItemDetail product={product} />
-            </>
-        )
-    }
+  if(loading){
+    return <h4>Cargando...</h4>
+  }else{
+    return (
+      <ItemDetail item={item}/>
+    )
+  }
 }
 
 export default ItemDetailContainer

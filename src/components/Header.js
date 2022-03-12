@@ -1,9 +1,12 @@
 import NavBar from "./NavBar"
+import CartWidget from "./CartWidget"
+import { NavLink } from "react-router-dom"
 
 const Header = () => {
   return (
     <header>
-        <h1>Corina Piercer</h1>
+        <NavLink to={"/"}><h1>Corina Piercer</h1></NavLink>
+        <NavLink to="/cart"><CartWidget/></NavLink>
         <NavBar/>
     </header>
   )
