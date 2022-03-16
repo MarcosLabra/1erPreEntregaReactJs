@@ -2,7 +2,7 @@ const Footer = () => {
     return (
         <footer>
         <ul>
-            <li class="footerCopy">Desarrollado por <p>Marcos Labra</p>
+            <li className="footerCopy">Desarrollado por <p>Marcos Labra</p>
             </li>
             <li><a href="https://www.facebook.com/corina.piercer.1"><i class="fab fa-facebook"></i></a></li>
             <li><a href="https://www.instagram.com/corinapiercer"><i class="fab fa-instagram"></i></a></li>
