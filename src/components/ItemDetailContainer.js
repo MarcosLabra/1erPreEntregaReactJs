@@ -28,13 +28,8 @@ const ItemDetailContainer = () => {
 
   },[])
 
-  if(loading){
-    return <h4>Cargando...</h4>
-  }else{
-    return (
-      <ItemDetail item={item}/>
-    )
-  }
+  return  loading ? <h4>Cargando...</h4> :  <ItemDetail item={item}/>;
+
 }
 
 export default ItemDetailContainer

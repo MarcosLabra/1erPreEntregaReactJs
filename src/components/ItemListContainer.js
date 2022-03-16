@@ -29,12 +29,7 @@ const ItemListContainer = () => {
 
   },[categoryId])
 
-
-  if (loading) {
-    return <h4>Cargando...</h4>
-  } else {
-    return <ItemList items={items} />
-  }
+  return  loading ? <h4>Cargando...</h4> :  <ItemList items={items} />
 
 }
 
