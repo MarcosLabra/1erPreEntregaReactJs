@@ -8,7 +8,6 @@ const NavBar = () => {
             <NavLink to="/category/men's clothing">men's clothing</NavLink>
             <NavLink to="/category/women's clothing">women's clothing</NavLink>
         </nav>
-        
     )
 }
 
