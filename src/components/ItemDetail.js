@@ -2,19 +2,19 @@ import Rate from 'rc-rate';
 import 'rc-rate/assets/index.css';
 import ItemCount from './ItemCount';
 import { NavLink } from "react-router-dom"
-import { useState } from "react";
+import { useState, useContext } from "react";
+
+import CartContext, { context } from '../context/CartContext';
+
 
 const ItemDetail = ({item}) => {
 
     const [cantCart, setCantCart] = useState(0)
+    const { addItem } = useContext(context)
 
-    const onAdd = (itemCant) => {
-        if((cantCart + itemCant) <= 5){
-        setCantCart(cantCart + itemCant)
-        }else{
-            alert("solo hay 5 elementos de este producto")
-        }
-
+    const onAdd = (quantity) => {
+        setCantCart(cantCart + quantity)
+        addItem(item, quantity)
     }
 
     return (

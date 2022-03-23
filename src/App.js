@@ -4,16 +4,17 @@ import Footer from "./components/Footer"
 import Header from "./components/Header"
 import Main from "./components/Main";
 import { BrowserRouter } from "react-router-dom";
-
-
+import CartContext from "./context/CartContext";
 
 
 const App = () => {
 
     return (
         <BrowserRouter>
-            <Header/>
-            <Main/>
+            <CartContext>
+                <Header/>
+                <Main/>
+            </CartContext>
             <Footer/>
             <ToastContainer/>
         </BrowserRouter>
