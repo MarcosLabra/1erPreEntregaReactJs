@@ -11,8 +11,7 @@ const CartWidget = () => {
       <span className="material-icons">
         shopping_cart
       </span>
-      {cartCounter()}
-      <p>${totalPrice()}</p>
+      {cartCounter() === 0 ? <></> : cartCounter()}
     </div>
 
   )

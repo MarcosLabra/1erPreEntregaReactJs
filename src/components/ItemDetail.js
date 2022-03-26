@@ -29,7 +29,7 @@ const ItemDetail = ({item}) => {
                 <p>In Cart: {cantCart}</p>
                 </div>
                 <ItemCount stock={5} initial={1} onAdd={onAdd}/>
-                <NavLink to="/cart" className='button'>terminar compra</NavLink>
+                {cantCart ? <NavLink to="/cart" className='button'>terminar compra</NavLink> : <></>}
             </div>
             <p className="descripcion">{item.description}</p>
         </article>

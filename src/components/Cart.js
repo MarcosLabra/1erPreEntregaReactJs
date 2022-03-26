@@ -1,5 +1,7 @@
 import { useContext } from "react"
 import { context } from "../context/CartContext"
+import { NavLink } from "react-router-dom"
+
 
 const Cart = () => {
 
@@ -23,6 +25,7 @@ const Cart = () => {
             ))}
             </div>
             {cartCounter() === 0 ? <h4>El carrito está vacio</h4> : <button className="button" onClick={() => { clear() }} >Vaciar Carrito</button>}
+            {cartCounter() === 0 ? <NavLink to="/" className="button">seguir comprando</NavLink> : <></>}
             {totalPrice() === 0 ? null : <h4>Precio total: ${totalPrice()}</h4>}
         </section>
     )
