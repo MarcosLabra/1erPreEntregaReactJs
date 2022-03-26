@@ -2,6 +2,8 @@ import { useEffect, useState } from "react"
 import ItemList from "./ItemList"
 import { useParams } from "react-router-dom"
 import { toast } from "react-toastify"
+import { collection , getDocs , getFirestore, query , where } from "firebase/firestore"
+import { db } from "./firebase"
 
 const ItemListContainer = () => {
 
@@ -10,23 +12,30 @@ const ItemListContainer = () => {
   const {categoryId} = useParams()
   
   useEffect(() => {
-      const url = `https://fakestoreapi.com/products${categoryId ? "/category/"+categoryId : ""}`
-      console.log(url)
 
-      fetch(url) 
-      .then((response)=>{
-          return response.json()
-      })
-      .then((resultado)=>{
-          setItems(resultado)
-      })
-      .catch(()=>{
-          toast.error("Error al cargar los productos")
-      })
-      .finally(()=>{
-          setLoading(false)
-      })
-
+        const productsCollection = collection(db, 'productos')
+        const respuesta = getDocs(productsCollection) 
+        if (categoryId) {
+            const queryCollectionCategory = query(collection(db, 'productos'), where('categoria', '==', categoryId) )
+            getDocs(queryCollectionCategory)
+            .then(resp => setItems( resp.docs.map(prod => (prod.data()))))
+            .finally(() => setLoading(false))
+		} else {
+			respuesta
+				.then((resultado) => {
+					resultado.docs.forEach(doc => {
+						const arrayResultado = resultado.docs.map((doc) => doc.data())
+						setItems(arrayResultado)
+						setLoading(false)
+					})
+				})
+				.catch((error) => {
+					toast.error("Error al cargar productos");
+				})
+				.finally(() => {
+					setLoading(false)
+				})
+		}  
   },[categoryId])
 
   return  loading ? <h4>Cargando...</h4> :  <ItemList items={items} />
