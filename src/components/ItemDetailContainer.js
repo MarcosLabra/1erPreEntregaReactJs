@@ -2,33 +2,28 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import ItemDetail from "./ItemDetail";
+import { collection, getDocs, query, where } from "firebase/firestore"
+import { db } from "./firebase"
 
 const ItemDetailContainer = () => {
 
   const [item, setItem] = useState({});
   const [loading, setLoading] = useState(true);
-  const {itemId} = useParams()
-  const [rateActual, setRateActual] = useState(0)
+  const { itemId } = useParams()
 
-  useEffect(()=>{
+  useEffect(() => {
 
-    fetch(`https://fakestoreapi.com/products/${itemId}`)
-    .then((response)=>{
-        return response.json()
-    })
-    .then((respuesta)=>{
-      setItem(respuesta)
-    })
-    .catch(()=>{
-      toast.error("Error al cargar el producto")
-    })
-    .finally(()=>{
-      setLoading(false)
-    })
+    const queryCollectionCategory = query(collection(db, 'productos'), where('id', '==', itemId))
+    getDocs(queryCollectionCategory)
+      .then(resp => setItem(resp.docs[0].data()))
+      .catch((error) => {
+        toast.error("Error al cargar productos");
+      })
+      .finally(() => setLoading(false))
 
-  },[])
+  }, [])
 
-  return  loading ? <h4>Cargando...</h4> :  <ItemDetail item={item}/>;
+  return loading ? <h4>Cargando...</h4> : <ItemDetail item={item} />;
 
 }
 

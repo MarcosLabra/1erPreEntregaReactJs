@@ -2,24 +2,27 @@ import { useEffect, useState } from "react"
 import ItemList from "./ItemList"
 import { useParams } from "react-router-dom"
 import { toast } from "react-toastify"
-import { collection , getDocs , getFirestore, query , where } from "firebase/firestore"
+import { collection, getDocs, query, where } from "firebase/firestore"
 import { db } from "./firebase"
 
 const ItemListContainer = () => {
 
-  const [loading, setLoading] = useState(true)
-  const [items, setItems] = useState([])
-  const {categoryId} = useParams()
-  
-  useEffect(() => {
+	const [loading, setLoading] = useState(true)
+	const [items, setItems] = useState([])
+	const { categoryId } = useParams()
 
-        const productsCollection = collection(db, 'productos')
-        const respuesta = getDocs(productsCollection) 
-        if (categoryId) {
-            const queryCollectionCategory = query(collection(db, 'productos'), where('categoria', '==', categoryId) )
-            getDocs(queryCollectionCategory)
-            .then(resp => setItems( resp.docs.map(prod => (prod.data()))))
-            .finally(() => setLoading(false))
+	useEffect(() => {
+
+		const productsCollection = collection(db, 'productos')
+		const respuesta = getDocs(productsCollection)
+		if (categoryId) {
+			const queryCollectionCategory = query(collection(db, 'productos'), where('categoria', '==', categoryId))
+			getDocs(queryCollectionCategory)
+				.then(resp => setItems(resp.docs.map(prod => (prod.data()))))
+				.catch((error) => {
+					toast.error("Error al cargar productos");
+				  })
+				.finally(() => setLoading(false))
 		} else {
 			respuesta
 				.then((resultado) => {
@@ -35,11 +38,10 @@ const ItemListContainer = () => {
 				.finally(() => {
 					setLoading(false)
 				})
-		}  
-  },[categoryId])
+		}
+	}, [categoryId])
 
-  return  loading ? <h4>Cargando...</h4> :  <ItemList items={items} />
+	return loading ? <h4>Cargando...</h4> : <ItemList items={items} />
 
 }
-
 export default ItemListContainer

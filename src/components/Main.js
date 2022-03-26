@@ -7,12 +7,12 @@ import { Route, Routes } from 'react-router-dom'
 const Main = () => {
   return (
     <main>
-          <Routes>
-                <Route path="/" element={<ItemListContainer/>} />
-                <Route path="/category/:categoryId" element={<ItemListContainer/>} />
-                <Route path="/items/:itemId" element={<ItemDetailContainer/>} />
-                <Route path="/cart" element={<Cart/>} />
-            </Routes>
+      <Routes>
+        <Route path="/" element={<ItemListContainer />} />
+        <Route path="/category/:categoryId" element={<ItemListContainer />} />
+        <Route path="/items/:itemId" element={<ItemDetailContainer />} />
+        <Route path="/cart" element={<Cart />} />
+      </Routes>
     </main>
   )
 }

@@ -1,19 +1,19 @@
 import { useState } from "react"
 
-const ItemCount = ({stock, initial, onAdd}) => {
+const ItemCount = ({ stock, initial, onAdd }) => {
 
     const [count, setCount] = useState(initial)
 
     const sumar = () => {
-        if(count < stock){
+        if (count < stock) {
             setCount(count + 1);
-        }else{
-        alert("no hay stock")
+        } else {
+            alert("no hay stock")
         }
     }
 
     const restar = () => {
-        if(count > initial){
+        if (count > initial) {
             setCount(count - 1);
         }
     }

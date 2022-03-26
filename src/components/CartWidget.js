@@ -4,7 +4,7 @@ import { context } from '../context/CartContext'
 
 const CartWidget = () => {
 
-  const {cartCounter, totalPrice} = useContext(context)
+  const { cartCounter } = useContext(context)
 
   return (
     <div>
