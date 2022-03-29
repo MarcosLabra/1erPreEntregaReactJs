@@ -10,4 +10,13 @@
     text-decoration: none;
     font-family: sans-serif;
     text-align: center;
+    cursor: pointer;
+    &:hover{
+        background-color: goldenrod;
+        color: $cremita;
+    }
+    &:active{
+        background-color: gold;
+        color: $cremita;
+    }
 }
