@@ -44,6 +44,7 @@ const CartContext = ({ children }) => {
         return compraTotal;
     }
 
+
     const cartContextValue = {
         cart, addItem, clear, cartCounter, totalPrice, removeItem
     }
