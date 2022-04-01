@@ -17,6 +17,11 @@ html , body , #root {
   font-family: dolceVita;
   src: url(./fonts/DolceVita.ttf);
 }
+@font-face {
+  font-family: Waialua;
+  src: url(./fonts/WaialuaBold.otf);
+}
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 //----------------variables------------------------
 $casiNegro: #252525;
 $marron: #a37657;
@@ -32,6 +37,7 @@ $gris: #756b6b;
 @import "./components/itemCount";
 @import "./components/button";
 @import "./components/cartItem";
+@import "./components/nav";
 // ------------------layouts-------------------------
 @import "./layouts/footer";
 @import "./layouts/main";

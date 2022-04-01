@@ -4,6 +4,7 @@ import { toast } from "react-toastify";
 import ItemDetail from "./ItemDetail";
 import { collection, getDocs, query, where } from "firebase/firestore"
 import { db } from "../../api/firebase"
+import NavBar from "./NavBar";
 
 const ItemDetailContainer = () => {
 
@@ -23,7 +24,7 @@ const ItemDetailContainer = () => {
 
   }, [])
 
-  return loading ? <h4>Cargando...</h4> : <ItemDetail item={item} />;
+  return loading ? <h4>Cargando...</h4> : (<ItemDetail item={item}/>);
 
 }
 

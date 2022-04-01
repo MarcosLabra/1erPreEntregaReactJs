@@ -1,0 +1,29 @@
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: $casiNegro;
+    a{
+        background-color: $cremita;
+        font-size: 1.5rem;
+        display: inline-block;
+        padding: .5rem 1rem;
+        margin: .5rem .5rem;
+        color: $casiNegro;
+        text-decoration: none;
+        font-family: 'Roboto', sans-serif;
+        border-radius: 3px;
+        
+        &:hover{
+            background-color: white;
+        }
+    }
+    .active{
+        border-radius: 3px;
+        background-color: white;
+        color: $marron;
+        box-shadow: none;
+    }
+    
+}

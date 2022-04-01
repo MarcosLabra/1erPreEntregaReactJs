@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom"
 
 const NavBar = () => {
     return (
-        <nav>
+        <nav className="nav">
             <NavLink to="/category/nostril" activeClassName="active">nostril</NavLink>
             <NavLink to="/category/argollitas" activeClassName="active"> argollitas</NavLink>
             <NavLink to="/category/dermal" activeClassName="active">dermal</NavLink>
