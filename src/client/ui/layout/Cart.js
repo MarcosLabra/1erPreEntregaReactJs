@@ -1,7 +1,7 @@
 import { useContext } from "react"
-import { context } from "../context/CartContext"
+import { context } from "../../api/providers/CartContext"
 import { NavLink } from "react-router-dom"
-import Buy from "./Buy"
+import Buyer from "../components/Buyer"
 
 
 const Cart = () => {
@@ -22,7 +22,7 @@ const Cart = () => {
                     </article>
                 ))}
             </div>
-            {cartCounter() === 0 ? <h4>El carrito está vacio</h4> : <Buy />}
+            {cartCounter() === 0 ? <h4>El carrito está vacio</h4> : <Buyer />}
             {cartCounter() === 0 ? <NavLink to="/" className="button">seguir comprando</NavLink> : <></>}
         </section>
     )

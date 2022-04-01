@@ -1,10 +1,10 @@
 import { ToastContainer } from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css';
-import Footer from "./components/Footer"
-import Header from "./components/Header"
-import Main from "./components/Main";
+import Footer from "../layout/Footer";
+import Header from "../layout/Header";
+import Main from "../layout/Main";
 import { BrowserRouter } from "react-router-dom";
-import CartContext from "./context/CartContext";
+import CartContext from "../../api/providers/CartContext";
 
 
 const App = () => {

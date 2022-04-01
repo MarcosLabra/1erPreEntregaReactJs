@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import ItemDetail from "./ItemDetail";
 import { collection, getDocs, query, where } from "firebase/firestore"
-import { db } from "./firebase"
+import { db } from "../../api/firebase"
 
 const ItemDetailContainer = () => {
 

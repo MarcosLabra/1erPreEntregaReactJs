@@ -2,7 +2,7 @@ import ItemCount from './ItemCount';
 import { NavLink } from "react-router-dom"
 import { useState, useContext } from "react";
 
-import { context } from '../context/CartContext';
+import { context } from '../../api/providers/CartContext';
 
 
 const ItemDetail = ({ item }) => {

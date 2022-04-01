@@ -1,6 +1,6 @@
 import React from 'react'
-import ItemListContainer from './ItemListContainer'
-import ItemDetailContainer from './ItemDetailContainer'
+import ItemListContainer from '../components/ItemListContainer'
+import ItemDetailContainer from '../components/ItemDetailContainer'
 import Cart from './Cart'
 import { Route, Routes } from 'react-router-dom'
 

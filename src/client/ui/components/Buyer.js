@@ -1,11 +1,11 @@
 import { useState } from "react"
-import { db } from "./firebase"
+import { db } from "../../api/firebase"
 import { collection, serverTimestamp, addDoc } from "firebase/firestore"
 import { toast } from "react-toastify"
 import { useContext } from "react"
-import { context } from "../context/CartContext"
+import { context } from "../../api/providers/CartContext"
 
-const Buy = () => {
+const Buyer = () => {
   const [buyer, setBuyer] = useState({ nombre: '', telefono: '', email: '' })
 
   const { cart, totalPrice, clear } = useContext(context)
@@ -53,4 +53,4 @@ const Buy = () => {
     </div>
   )
 }
-export default Buy
+export default Buyer
