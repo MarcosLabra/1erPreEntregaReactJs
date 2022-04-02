@@ -12,8 +12,9 @@ const Header = () => {
         <NavLink to={"/"}><h1>Corina Piercer</h1></NavLink>
         <NavLink to="/cart"><CartWidget /></NavLink>
       </div>
+      <NavBar />
     </header>
-    <NavBar />
+    
     </>
   )
 }

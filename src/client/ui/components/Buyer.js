@@ -40,17 +40,19 @@ const Buyer = () => {
       })
   }
   return (
-    <div>
-      <form style={{ fontSize: '1.5rem' }}>
+    <section className="buyer">
+      <h4>Precio total: ${totalPrice()}</h4>
+      <button className="button" onClick={() => { clear() }} >Vaciar Carrito</button>
+      <div>
+      <p>Datos del comprador</p>
+      <form className="form">
         <input value={buyer.nombre} name="nombre" type="text" placeholder="Nombre" onChange={handleChange} />
         <input value={buyer.telefono} name="telefono" type="number" placeholder="Telefono" onChange={handleChange} />
         <input value={buyer.email} name="email" type="email" placeholder="Email" onChange={handleChange} />
-
       </form>
-      <h4>Precio total: ${totalPrice()}</h4>
-      <button className="button" onClick={() => { clear() }} >Vaciar Carrito</button>
       <button className="button" onClick={() => endPurchase()}>Finalizar compra</button>
-    </div>
+      </div>
+    </section>
   )
 }
 export default Buyer

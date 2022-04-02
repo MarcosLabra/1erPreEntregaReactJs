@@ -27,5 +27,34 @@
         background-color: $marron;
         border-radius: 3px;
         font-family: sans-serif;
+        &:hover{
+            background-color: goldenrod;
+            color: $cremita;
+        }
+        &:active{
+            background-color: gold;
+            color: $cremita;
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .itemCount{
+        div{
+            button{
+                font-size: 2rem;
+            }
+        }
+        button{
+            font-size: 2rem;
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .itemCount{
+        button{
+            font-size: 1.5rem;
+        }
     }
 }

@@ -35,3 +35,36 @@ footer {
     }
   }
 }
+@media (min-width: 768px) {
+  footer {
+    li {
+      i {
+        font-size: 4rem;
+      }
+    }
+    .footerCopy {
+      font-size: 2rem;
+
+      p {
+        font-size: 2.5rem;
+      }
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  footer {
+    li {
+      i {
+        font-size: 3rem;
+      }
+    }
+    .footerCopy {
+      font-size: 1.5rem;
+
+      p {
+        font-size: 2rem;
+      }
+    }
+  }
+}

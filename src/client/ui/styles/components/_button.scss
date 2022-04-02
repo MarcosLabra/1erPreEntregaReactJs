@@ -20,3 +20,9 @@
         color: $cremita;
     }
 }
+
+@media (min-width: 768px) {
+    .button{
+        font-size: 2rem;
+    }
+}
