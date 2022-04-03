@@ -51,7 +51,7 @@
 }
 @media (min-width: 1200px) {
   .cartItem {
-    width: 35vw;
+    width: fit-content;
     img {
       height: 20vh;
     }

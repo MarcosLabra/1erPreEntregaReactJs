@@ -23,7 +23,7 @@ const ItemDetail = ({ item }) => {
                     <h3>{item.nombre}</h3>
                     <p>${item.precio}</p>
                     <p>Material:<span>{item.material}</span></p>
-                    <p>En carrito:<span>{cantCart}</span> </p>
+                    <p>Al carrito:<span>{cantCart}</span> </p>
                     <ItemCount stock={5} initial={1} onAdd={onAdd} />
                 </div>
             </div>

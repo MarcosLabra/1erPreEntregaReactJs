@@ -18,14 +18,10 @@ header {
       padding: 0rem;
       font-size: 3rem;
       text-decoration: none;
-      h1 {
-        font-family: "Waialua";
-        color: white;
-        font-size: 4rem;
-        text-decoration: none;
-        &:hover {
-          color: $cremita;
-        }
+      img {
+        margin-top: 1rem;
+        width: 20rem;
+        cursor: pointer;
       }
     }
   }
@@ -36,8 +32,8 @@ header {
     div {
       a {
         font-size: 5rem;
-        h1 {
-          font-size: 6rem;
+        img {
+          width: 25rem;
         }
         .material-icons {
           font-size: 4rem;
@@ -52,8 +48,8 @@ header {
     div {
       a {
         font-size: 4rem;
-        h1 {
-          font-size: 4rem;
+        img {
+          width: 20rem;
         }
         .material-icons {
           font-size: 3.5rem;

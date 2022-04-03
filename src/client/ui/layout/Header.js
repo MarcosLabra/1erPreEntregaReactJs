@@ -9,7 +9,7 @@ const Header = () => {
     <>
     <header>
       <div>
-        <NavLink to={"/"}><h1>Corina Piercer</h1></NavLink>
+        <NavLink to={"/"}><img src="/LOGO corinapiercer.png" alt="" /></NavLink>
         <NavLink to="/cart"><CartWidget /></NavLink>
       </div>
       <NavBar />
